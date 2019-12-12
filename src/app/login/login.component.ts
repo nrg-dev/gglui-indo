@@ -241,6 +241,7 @@ export class LoginComponent implements OnInit {
                 localStorage.setItem('pageName',"memberhome");
                 localStorage.setItem('userloginPrimaryKeyString',this.user.userloginPrimaryKeyString);  
                 localStorage.setItem('firstName',this.user.memberID);
+                localStorage.setItem('country',this.user.country);
                 this.router.navigate(['/memberhome']);
             } 
 

@@ -28,6 +28,10 @@ export class MemberhomeComponent implements OnInit {
   nodata = 'none';
   noSearchinfo = 'none';
 
+  public countryName:string;
+  public indonesiaCust = false;
+  public otherCust = false;
+
   constructor(
       private route: ActivatedRoute,
       private router: Router,
@@ -41,6 +45,14 @@ export class MemberhomeComponent implements OnInit {
 
   ngOnInit() {
     console.log("-------------Member Login ngOnInit---------------");
+    this.countryName = localStorage.getItem('country');
+    if(this.countryName == "Indonesia"){
+      this.indonesiaCust = true;
+      this.otherCust = false;
+    }else{
+      this.indonesiaCust = false;
+      this.otherCust = true;
+    }
     this.clickDashboard();
     this.model.firstName = localStorage.getItem('firstName');
     this.userService.getCountry()

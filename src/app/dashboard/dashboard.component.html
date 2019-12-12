@@ -1790,6 +1790,11 @@
 												<div class="col-md-3 col-xs-3 col-lg-3">{{ x.memberType }}</div>						
 										</div><br/>
 										<div class="row">
+											<div class="col-md-5 col-xs-5 col-lg-3">Country</div>
+											<div class="col-md-1 col-xs-1 col-lg-1">:</div>
+											<div class="col-md-3 col-xs-3 col-lg-3">{{ x.country }}</div>						
+										</div><br/>
+										<div class="row">
 												<div class="col-md-5 col-xs-5 col-lg-3">Commission</div>
 												<div class="col-md-1 col-xs-1 col-lg-1">:</div>
 												<div class="col-md-3 col-xs-3 col-lg-3">{{ x.memberCommition }}</div>
@@ -1821,11 +1826,11 @@
 							<div *ngFor="let x of allMemList"  class="row">
 								<div class="col-sm-8">      
 										
-										<h3> <a> Member Name : {{ x.memberName }} ({{ x.memberID }}) </a> </h3> 
-												<div class="row">
-											<div class="col-lg-3 col-md-5 col-xs-5">Phone</div>
-											<div class="col-lg-1 col-md-1 col-xs-1">:</div>
-											<div class="col-lg-3 col-md-6 col-xs-5">{{ x.memberPhone }}</div>
+									<h3> <a> Member Name : {{ x.memberName }} ({{ x.memberID }}) </a> </h3> 
+									<div class="row">
+										<div class="col-lg-3 col-md-5 col-xs-5">Phone</div>
+										<div class="col-lg-1 col-md-1 col-xs-1">:</div>
+										<div class="col-lg-3 col-md-6 col-xs-5">{{ x.memberPhone }}</div>
 									</div><br/>
 									<div class="row">
 											<div class="col-lg-3 col-md-5 col-xs-5">Email</div>
@@ -1846,6 +1851,11 @@
 											<div class="col-lg-3 col-md-5 col-xs-5">Overriding</div>
 											<div class="col-lg-1 col-md-1 col-xs-1">:</div>
 											<div class="col-lg-3 col-md-6 col-xs-5">{{ x.memberOvrriding }}</div>
+									</div><br/>
+									<div class="row">
+										<div class="col-lg-3 col-md-5 col-xs-5">Country</div>
+										<div class="col-lg-1 col-md-1 col-xs-1">:</div>
+										<div class="col-lg-3 col-md-6 col-xs-5">{{ x.country }}</div>
 									</div><br/>
 									<div class="row">
 											<div class="col-lg-3 col-md-5 col-xs-5">Status</div>
@@ -2047,10 +2057,11 @@
 								<!-- <table style="margin-left: 10px;margin-top: 15px;margin-right: 35px;"> -->
 									<thead>
 										<tr>
-										<th>Number</th>
-										<th>Date</th>
-										<th>Commission amount</th>
-										<th>Overriding amount</th>
+											<th>Number</th>
+											<th>Date</th>	
+											<th>Country</th>
+											<th>Commission amount</th>
+											<th>Overriding amount</th>
 						
 										</tr>
 									</thead>
@@ -2064,6 +2075,7 @@
 										<tr *ngFor="let x of allMemList">
 										<td>{{ x.sNo }}</td>
 										<td>{{ x.created_date }}</td>
+										<td>{{ x.country }}</td>
 										<td>{{ x.memberCommition }}</td>
 										<td>{{ x.memberOvrriding }}</td>
 						
@@ -2107,6 +2119,12 @@
 														<div class="col-lg-3 col-md-5 col-xs-5">Account Type</div>
 														<div class="col-lg-2 col-md-2 col-xs-2">:</div>
 														<div class="col-lg-3 col-md-5 col-xs-5">{{ x.memberType }}</div>						
+												</div><br/>
+
+												<div class="row">
+													<div class="col-lg-3 col-md-5 col-xs-5">Country</div>
+													<div class="col-lg-2 col-md-2 col-xs-2">:</div>
+													<div class="col-lg-3 col-md-5 col-xs-5">{{ x.country }}</div>						
 												</div><br/>
 							
 												<div class="row">

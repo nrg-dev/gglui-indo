@@ -10,6 +10,8 @@ export class MemberheaderComponent implements OnInit {
 
   imgsrc: string;
   public pageName:string;
+  public countryName:string;
+  public indonesiaCust = false;
   approvedialog = 'none';
 
   constructor(  private router: Router) {  }
@@ -17,7 +19,12 @@ export class MemberheaderComponent implements OnInit {
   ngOnInit() {
     this.pageName=localStorage.getItem('pageName');
     this.imgsrc="assets/images/logo.jpg";
-
+    this.countryName = localStorage.getItem('country');
+    if(this.countryName == "Indonesia"){
+      this.indonesiaCust = false;
+    }else{
+      this.indonesiaCust = true;
+    }
   }
 
   mainHeader(){

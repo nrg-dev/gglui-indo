@@ -26,7 +26,7 @@
         <!-- My Profile End-->
 
         <!-- Withdraw start-->
-        <li class="main-header">
+        <li class="main-header" *ngIf="indonesiaCust">
             <a [routerLink]="['/member-withdraw']">
                 <span class="icononly">
                     <img id="icon1" src="/assets/icon/withdraw.jpg" />

@@ -10,7 +10,7 @@ import { AlertService, AuthenticationService } from '../_services/index';
 })
 export class MemberMyprofileComponent implements OnInit {
   model: any = {};
-  user:User;
+  user:User = new User;
   loading = false;
   countryList: any = {};
 
@@ -20,7 +20,10 @@ export class MemberMyprofileComponent implements OnInit {
   successdialog ='none';
   failuredialog ='none';
   networkissue ='none';
-    
+
+  public indonesiaCust = false;
+  public indonesiaCustEProfile = false;
+ 
   constructor(
     private userService: UserService,
     private alertService: AlertService 
@@ -29,15 +32,19 @@ export class MemberMyprofileComponent implements OnInit {
   }
 
   ngOnInit() {
-
       this.userService.getMyProfile(localStorage.getItem('userloginPrimaryKeyString'))
       .subscribe(
         data => {
           this.user=data;
           this.menu6=true;
+          if(this.user.country == "Indonesia"){
+            this.indonesiaCust = false;
+          }else{
+            this.indonesiaCust = true;
+          }
         },
         error => {
-            this.menu6=true;
+          this.menu6=true;
         } 
       ); 
 
@@ -48,7 +55,6 @@ export class MemberMyprofileComponent implements OnInit {
         },
         error => {  }
       );
-
   }
 
   onMenuClick(value: string): void {
@@ -63,7 +69,12 @@ export class MemberMyprofileComponent implements OnInit {
 
   OnEdit (){
     this.profilediv = true;
-    this.menu6 = false;       
+    this.menu6 = false;    
+    if(this.user.country == "Indonesia"){
+      this.indonesiaCustEProfile = false;
+    }else{
+      this.indonesiaCustEProfile = true;
+    }   
   }
    
   myprofileback(){

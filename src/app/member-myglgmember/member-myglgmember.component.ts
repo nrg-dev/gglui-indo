@@ -13,6 +13,8 @@ export class MemberMyglgmemberComponent implements OnInit {
   showMyMemList: any = {};
   public nodatadialog = 'none';
   
+  public indonesiaCust = false;
+
   constructor(  
 
     private router: Router,
@@ -28,6 +30,7 @@ export class MemberMyglgmemberComponent implements OnInit {
   clickMenu4(){
     this.loadinggif = true;
     this.menu4 = false;
+    var country = localStorage.getItem('country');
     this.userService.getMyMemberList(localStorage.getItem('memberNumber'))
     .subscribe(
       data => {
@@ -39,6 +42,11 @@ export class MemberMyglgmemberComponent implements OnInit {
           }else{
             this.loadinggif = false;
             this.menu4 = true;
+            if(country == "Indonesia"){
+              this.indonesiaCust = false;
+            }else{
+              this.indonesiaCust = true;
+            }
           }
       },
       error => {

@@ -23,62 +23,116 @@
   	</div>								
 	<!--app-memberheader End-->
   	<br/><br/><br/><br/><br/><br/>
-  
-  	<div>
-		<div class="col-sm-6 col-md-6 col-xs-12 col-lg-4">
-			<br/><br/><br/>
-			<div style="background-image: url('/assets/images/gglLogo3.jpg');" id="memberhome-logo"></div>
-			<p class="text">Global Gain Limited</p>
-			<p class="text1"> Hello, Mr {{ this.model.firstName }}</p>
-		</div>
-
-		<div class="col-sm-6 col-md-6 col-xs-12 col-lg-4">
-			<div class="my-profile" id="my-profile2">
-				<a [routerLink]="['/member-myprofile']"> 
-					<i class="fa fa-user" aria-hidden="true" id="icon"></i>
-					<br/><br/>
-					<label id="label">My Profile</label>
-				</a>
+	
+	<!-- Indonesia User -->
+	<div *ngIf="indonesiaCust">
+		<div>
+			<div class="col-sm-6 col-md-6 col-xs-12 col-lg-4">
+				<br/><br/><br/>
+				<div style="background-image: url('/assets/images/gglLogo3.jpg');" id="memberhome-logo"></div>
+				<p class="text">Global Gain Limited</p>
+				<p class="text1"> Hello, Mr {{ this.model.firstName }}</p>
+			</div>
+	
+			<div class="col-sm-6 col-md-6 col-xs-12 col-lg-4">
+				<div class="my-profile" id="my-profile2">
+					<a [routerLink]="['/member-myprofile']"> 
+						<i class="fa fa-user" aria-hidden="true" id="icon"></i>
+						<br/><br/>
+						<label id="label">My Profile</label>
+					</a>
+				</div>
+			</div>
+	
+			<div class="col-sm-6 col-md-6 col-xs-12 col-lg-4">
+				<div class="my-profile" id="my-profile2">
+					<a [routerLink]="['/member-myglgmember']">
+						<i class="fa fa-users" aria-hidden="true" id="icon1"></i>
+						<label id="label1">My GLG Member</label>
+					</a>
+				</div>
 			</div>
 		</div>
-
-		<div class="col-sm-6 col-md-6 col-xs-12 col-lg-4">
-			<div class="my-profile" id="my-profile2">
-				<a [routerLink]="['/member-myglgmember']">
-					<i class="fa fa-users" aria-hidden="true" id="icon1"></i>
-					<label id="label1">My GLG Member</label>
-				</a>
+	
+		<div>
+			<div class="col-sm-6 col-md-6 col-xs-12 col-lg-4">
+				<div class="my-profile" id="my-profile3">
+					<a [routerLink]="['/member-purchaseunit']">  
+						<img id="icon2" src="/assets/icon/investment.jpg"  />
+						<br/><br/>
+						<label id="label">Fund Seed</label>
+					</a>
+				</div>
+			</div>
+	
+			<div class="col-sm-6 col-md-6 col-xs-12 col-lg-4">
+				<div class="my-profile" id="my-profile2">
+					<a [routerLink]="['/member-booking-dashboard']"> 
+						<img id="icon2" src="/assets/icon/booking.jpg"  />
+						<label id="label">Booking</label>
+					</a>
+				</div>
 			</div>
 		</div>
 	</div>
-
-	<div>
-		<div class="col-sm-6 col-md-6 col-xs-12 col-lg-4">
-			<div class="my-profile" id="my-profile3">
-				<a [routerLink]="['/member-withdraw']"> 
-					<img id="icon2" src="/assets/icon/withdraw.jpg"  />
-					<br/><br/>
-					<label id="label">Withdraw</label>
-				</a>
+	<!-- Other Customer -->
+	<div *ngIf="otherCust">
+		<div>
+			<div class="col-sm-6 col-md-6 col-xs-12 col-lg-4">
+				<br/><br/><br/>
+				<div style="background-image: url('/assets/images/gglLogo3.jpg');" id="memberhome-logo"></div>
+				<p class="text">Global Gain Limited</p>
+				<p class="text1"> Hello, Mr {{ this.model.firstName }}</p>
+			</div>
+	
+			<div class="col-sm-6 col-md-6 col-xs-12 col-lg-4">
+				<div class="my-profile" id="my-profile2">
+					<a [routerLink]="['/member-myprofile']"> 
+						<i class="fa fa-user" aria-hidden="true" id="icon"></i>
+						<br/><br/>
+						<label id="label">My Profile</label>
+					</a>
+				</div>
+			</div>
+	
+			<div class="col-sm-6 col-md-6 col-xs-12 col-lg-4">
+				<div class="my-profile" id="my-profile2">
+					<a [routerLink]="['/member-myglgmember']">
+						<i class="fa fa-users" aria-hidden="true" id="icon1"></i>
+						<label id="label1">My GLG Member</label>
+					</a>
+				</div>
 			</div>
 		</div>
-
-		<div class="col-sm-6 col-md-6 col-xs-12 col-lg-4">
-			<div class="my-profile" id="my-profile2">
-				<a [routerLink]="['/member-purchaseunit']">  
-					<img id="icon2" src="/assets/icon/investment.jpg"  />
-					<br/>
-					<label id="label">Fund Seed</label>
-				</a>
+	
+		<div>
+			<div class="col-sm-6 col-md-6 col-xs-12 col-lg-4">
+				<div class="my-profile" id="my-profile3">
+					<a [routerLink]="['/member-withdraw']"> 
+						<img id="icon2" src="/assets/icon/withdraw.jpg"  />
+						<br/><br/>
+						<label id="label">Withdraw</label>
+					</a>
+				</div>
 			</div>
-		</div>
-
-		<div class="col-sm-6 col-md-6 col-xs-12 col-lg-4">
-			<div class="my-profile" id="my-profile2">
-				<a [routerLink]="['/member-booking-dashboard']"> 
-					<img id="icon2" src="/assets/icon/booking.jpg"  />
-					<label id="label">Booking</label>
-				</a>
+	
+			<div class="col-sm-6 col-md-6 col-xs-12 col-lg-4">
+				<div class="my-profile" id="my-profile2">
+					<a [routerLink]="['/member-purchaseunit']">  
+						<img id="icon2" src="/assets/icon/investment.jpg"  />
+						<br/>
+						<label id="label">Fund Seed</label>
+					</a>
+				</div>
+			</div>
+	
+			<div class="col-sm-6 col-md-6 col-xs-12 col-lg-4">
+				<div class="my-profile" id="my-profile2">
+					<a [routerLink]="['/member-booking-dashboard']"> 
+						<img id="icon2" src="/assets/icon/booking.jpg"  />
+						<label id="label">Booking</label>
+					</a>
+				</div>
 			</div>
 		</div>
 	</div>

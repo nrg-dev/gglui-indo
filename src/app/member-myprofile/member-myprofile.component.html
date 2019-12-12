@@ -1,5 +1,5 @@
 <app-memberheader></app-memberheader>
-<div class="col-sm-12 col-lg-12"style="background-image: url('/assets/images/bg-myprofile.jpg');height:767px;">
+<div class="col-sm-12 col-lg-12" style="background-image: url('/assets/images/bg-myprofile.jpg');height:767px;">
   <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
   <div class="col-lg-5"></div>
   <div class="col-lg-3"></div>
@@ -56,7 +56,7 @@
                           <th id="color">Bank Name</th>
                           <td id="color2"> {{ this.user.bankName }}</td>
                         </tr>
-                        <tr>
+                        <tr *ngIf="indonesiaCust">
                           <th id="color1">Overriding</th>
                           <td id="color3"> {{ this.user.memberOvrriding }} SGD</td>
                         </tr>
@@ -85,7 +85,7 @@
                             <th id="color1">A/C Number</th>
                             <td id="color3"> {{ this.user.bankAcctNumber }}</td>
                           </tr>
-                          <tr>
+                          <tr *ngIf="indonesiaCust">
                             <th id="color">Commission</th>
                             <td id="color2"> {{ this.user.memberCommition }} SGD</td>
                           </tr>
@@ -142,7 +142,7 @@
                             </td>
                           </tr>
           
-                          <tr>
+                          <tr *ngIf="indonesiaCustEProfile">
                             <th id="color1">Overriding</th>
                             <td id="color3"> {{ this.user.memberOvrriding }} SGD</td>
                           </tr>
@@ -183,7 +183,7 @@
                                 </td>
                               </tr>
         
-                              <tr>
+                              <tr *ngIf="indonesiaCustEProfile">
                                 <th id="color">Commission</th>
                                 <td id="color2"> {{ this.user.memberCommition }} SGD</td>
                               </tr>
